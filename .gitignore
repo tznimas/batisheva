@@ -1,0 +1,7 @@
+*
+!.gitignore
+!index.html
+!index2.html
+!index3.html
+!photos/
+!photos/**

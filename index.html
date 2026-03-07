@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Нутрициолог Екатерина Батищева — интегративный подход к здоровью</title>
+  <meta name="description" content="Первая версия сайта-визитки интегративного нутрициолога: работа с инсулинорезистентностью, диабетом 2 типа, метаболическим синдромом и коррекцией веса.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f1e9;
+      --surface: #fffcf6;
+      --surface-soft: #f2ebe0;
+      --ink: #2f2a23;
+      --muted: #6e645a;
+      --accent: #3d7461;
+      --accent-strong: #285544;
+      --accent-warm: #bf6f42;
+      --line: #e2d8cb;
+      --shadow: 0 20px 50px rgba(50, 35, 20, 0.12);
+      --radius: 20px;
+      --radius-small: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% -10%, rgba(191, 111, 66, 0.16), transparent 36%),
+        radial-gradient(circle at 95% 8%, rgba(61, 116, 97, 0.2), transparent 30%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(242, 235, 224, 0.8) 100%);
+      border-top: 1px solid rgba(226, 216, 203, 0.7);
+      border-bottom: 1px solid rgba(226, 216, 203, 0.7);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(245, 241, 233, 0.88);
+      border-bottom: 1px solid rgba(226, 216, 203, 0.7);
+    }
+
+    .header-row {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-list a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav-list a:hover {
+      color: var(--ink);
+      background: rgba(61, 116, 97, 0.09);
+    }
+
+    .hero {
+      padding: 72px 0 82px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent-strong);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5.4vw, 3.5rem);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4.1vw, 2.7rem);
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: clamp(1.24rem, 2.1vw, 1.56rem);
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      margin: 0 0 22px;
+      font-size: 1.05rem;
+      color: #443d34;
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(140deg, var(--accent) 0%, var(--accent-strong) 100%);
+      box-shadow: 0 10px 24px rgba(40, 85, 68, 0.25);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 14px 28px rgba(40, 85, 68, 0.3);
+    }
+
+    .btn-ghost {
+      border-color: rgba(61, 116, 97, 0.4);
+      color: var(--accent-strong);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-facts {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-facts li {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 0.86rem;
+      color: #4e463d;
+      font-weight: 600;
+    }
+
+    .caption {
+      margin-top: 14px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .hero-media {
+      margin: 0;
+      position: relative;
+    }
+
+    .hero-media img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: -14px;
+      bottom: 18px;
+      width: min(260px, 75%);
+      background: rgba(255, 252, 246, 0.92);
+      border: 1px solid rgba(191, 111, 66, 0.35);
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 16px 32px rgba(68, 50, 30, 0.14);
+      color: #3a342d;
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--accent-strong);
+    }
+
+    .text-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 12px 24px rgba(68, 50, 30, 0.08);
+    }
+
+    .panel p {
+      margin: 0;
+      color: #4f473d;
+    }
+
+    .panel p + p {
+      margin-top: 14px;
+    }
+
+    .quote {
+      font-size: 1.15rem;
+      line-height: 1.4;
+      color: #362f27;
+      margin-bottom: 16px;
+    }
+
+    .quote-author {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .section-intro {
+      max-width: 70ch;
+      margin: 0 0 30px;
+      color: #4d4439;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-small);
+      padding: 20px;
+      box-shadow: 0 10px 24px rgba(68, 50, 30, 0.08);
+    }
+
+    .card p {
+      margin: 0;
+      color: #4f473e;
+      font-size: 0.95rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps li {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-small);
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(68, 50, 30, 0.08);
+      position: relative;
+      min-height: 180px;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(61, 116, 97, 0.16);
+      color: var(--accent-strong);
+      font-size: 0.9rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .steps h3 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .steps p {
+      margin: 0;
+      color: #4f473d;
+      font-size: 0.9rem;
+    }
+
+    .packages {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .package {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-small);
+      padding: 20px;
+      box-shadow: 0 10px 24px rgba(68, 50, 30, 0.08);
+    }
+
+    .package .price {
+      margin: 10px 0 14px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    .package ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #4f473d;
+      font-size: 0.92rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .timeline-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      align-items: baseline;
+    }
+
+    .timeline-item .year {
+      color: var(--accent-strong);
+      font-weight: 800;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: #4f473d;
+    }
+
+    .certificates {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .certificate {
+      margin: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(68, 50, 30, 0.08);
+    }
+
+    .certificate img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .certificate figcaption {
+      padding: 10px 12px 12px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .review {
+      margin: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(68, 50, 30, 0.08);
+      color: #4f473d;
+      font-size: 0.94rem;
+    }
+
+    .review footer {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .faq {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .faq details {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+      color: #3b342b;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq p {
+      margin: 10px 0 0;
+      color: #4f473d;
+      font-size: 0.94rem;
+    }
+
+    .cta-shell {
+      background: linear-gradient(145deg, rgba(61, 116, 97, 0.14) 0%, rgba(191, 111, 66, 0.14) 100%);
+      border: 1px solid rgba(61, 116, 97, 0.25);
+      border-radius: var(--radius);
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+    }
+
+    .cta-shell p {
+      margin: 12px 0 0;
+      color: #433b31;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(226, 216, 203, 0.95);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .contact-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #4f473d;
+      font-size: 0.93rem;
+      line-height: 1.5;
+    }
+
+    .contact-card li + li {
+      margin-top: 6px;
+    }
+
+    .placeholder {
+      background: rgba(191, 111, 66, 0.14);
+      color: #6f3f23;
+      border: 1px dashed rgba(191, 111, 66, 0.5);
+      border-radius: 8px;
+      padding: 2px 6px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .site-footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 550ms ease, transform 550ms ease;
+      transition-delay: var(--delay, 0ms);
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1040px) {
+      .cards,
+      .packages,
+      .review-grid,
+      .certificates {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .text-grid,
+      .cta-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-badge {
+        position: static;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .header-row {
+        min-height: 68px;
+      }
+
+      .nav-list {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 64px 0;
+      }
+
+      .cards,
+      .packages,
+      .review-grid,
+      .certificates,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <p class="brand-title">Екатерина Батищева</p>
+        <p class="brand-subtitle">Интегративный нутрициолог</p>
+      </div>
+      <ul class="nav-list">
+        <li><a href="#about">О подходе</a></li>
+        <li><a href="#services">Запросы</a></li>
+        <li><a href="#process">Формат</a></li>
+        <li><a href="#education">Квалификация</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div data-reveal>
+          <p class="eyebrow">Сайт-визитка нутрициолога</p>
+          <h1>29 лет с вами на пути к здоровью: почему я знаю, что диабет можно предотвратить</h1>
+          <p class="lead">Меня зовут Екатерина Батищева. Я прошла путь от фармации к интегративной нутрициологии, чтобы работать не только с симптомами, а с причинами нарушений обмена веществ, веса и самочувствия.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacts">Записаться на консультацию</a>
+            <a class="btn btn-ghost" href="#services">Посмотреть направления</a>
+          </div>
+          <ul class="hero-facts">
+            <li>29 лет в фармации</li>
+            <li>Нутрициология с 2021 года</li>
+            <li>Инсулинорезистентность и диабет 2 типа</li>
+            <li>Работа онлайн и офлайн <span class="placeholder">[уточнить]</span></li>
+          </ul>
+          <p class="caption">Ссылка в кнопке временная: <span class="placeholder">[добавить Telegram / WhatsApp / форму записи]</span></p>
+        </div>
+
+        <figure class="hero-media" data-reveal style="--delay: 120ms;">
+          <img src="photos/1.png" alt="Портрет Екатерины Батищевой у моря" loading="eager">
+          <div class="hero-badge">
+            <strong>Позиция</strong>
+            "Диабет — не приговор. Это состояние, с которым можно работать системно и безопасно".
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="about">
+      <div class="container text-grid">
+        <article class="panel" data-reveal>
+          <h2>Подход: причина, а не маскировка симптомов</h2>
+          <p>Долгие годы в фармации показали мне важную закономерность: лекарства часто снимают проявления, но не убирают основу проблемы. Поэтому в нутрициологии я делаю акцент на разборе исходного состояния, анализах, образе жизни и персональной стратегии восстановления.</p>
+          <p>Моя задача — помочь человеку изменить траекторию здоровья: от тревожных показателей сахара и усталости к стабильному состоянию, энергии и управляемым привычкам.</p>
+        </article>
+
+        <aside class="panel" data-reveal style="--delay: 120ms;">
+          <p class="quote">"Я здесь для того, чтобы помочь вам найти и устранить причину, а не просто "запихнуть" симптомы очередной таблеткой".</p>
+          <p class="quote-author">Из согласованного вступительного текста (вариант 1)</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2 data-reveal>С какими запросами я помогаю</h2>
+        <p class="section-intro" data-reveal style="--delay: 90ms;">Направления сформированы по материалам из Telegram-диалога и брифа. Детали пакетов и стоимость пока отмечены как плейсхолдеры до финального согласования.</p>
+
+        <div class="cards">
+          <article class="card" data-reveal>
+            <h3>Сахарный диабет 2 типа</h3>
+            <p>Комплексное сопровождение, питание и коррекция образа жизни в связке с лечащим врачом.</p>
+          </article>
+
+          <article class="card" data-reveal style="--delay: 70ms;">
+            <h3>Преддиабет и ИР</h3>
+            <p>Ранняя диагностика нарушений углеводного обмена и мягкая стратегия возврата чувствительности к инсулину.</p>
+          </article>
+
+          <article class="card" data-reveal style="--delay: 140ms;">
+            <h3>Метаболический синдром</h3>
+            <p>Работа со всей системой: сахар, вес, липидный профиль, давление и поведенческие факторы.</p>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>Коррекция веса</h3>
+            <p>Снижение веса без жестких диет: через выявление причин и персонально подобранный рацион.</p>
+          </article>
+
+          <article class="card" data-reveal style="--delay: 70ms;">
+            <h3>Anti-Age подход</h3>
+            <p>Поддержка энергии, качества жизни и возраст-менеджмент через питание и привычки.</p>
+          </article>
+
+          <article class="card" data-reveal style="--delay: 140ms;">
+            <h3>Питание для активных</h3>
+            <p>Фитнес-нутрициология: рацион для тренировок, восстановления и долгосрочной результативности.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="process">
+      <div class="container">
+        <h2 data-reveal>Как проходит работа</h2>
+        <p class="section-intro" data-reveal style="--delay: 90ms;">Процесс собран в логике "проблема → диагностика → решение → сопровождение". Длительность этапов и формат общения уточняются.</p>
+
+        <ol class="steps">
+          <li data-reveal>
+            <h3>Первичная анкета</h3>
+            <p>Сбор жалоб, истории, текущих анализов и целей. <span class="placeholder">[добавить ссылку на анкету]</span></p>
+          </li>
+
+          <li data-reveal style="--delay: 70ms;">
+            <h3>Разбор состояния</h3>
+            <p>Анализ исходных данных и, при необходимости, список дополнительных обследований.</p>
+          </li>
+
+          <li data-reveal style="--delay: 140ms;">
+            <h3>Персональный план</h3>
+            <p>Рекомендации по питанию, режиму, нутрицевтической поддержке и бытовым привычкам.</p>
+          </li>
+
+          <li data-reveal style="--delay: 210ms;">
+            <h3>Сопровождение</h3>
+            <p>Контроль динамики, корректировки и ответы на вопросы. <span class="placeholder">[срок и формат согласовать]</span></p>
+          </li>
+        </ol>
+
+        <div class="packages">
+          <article class="package" data-reveal>
+            <h3>Пакет "Старт"</h3>
+            <p class="price"><span class="placeholder">[стоимость]</span></p>
+            <ul>
+              <li>Диагностика по анкете и анализам</li>
+              <li>Индивидуальные рекомендации на 4-6 недель</li>
+              <li><span class="placeholder">[уточнить: есть ли обратная связь]</span></li>
+            </ul>
+          </article>
+
+          <article class="package" data-reveal style="--delay: 70ms;">
+            <h3>Пакет "Сопровождение"</h3>
+            <p class="price"><span class="placeholder">[стоимость]</span></p>
+            <ul>
+              <li>Полный персональный протокол</li>
+              <li>Поддержка и корректировка в динамике</li>
+              <li><span class="placeholder">[длительность / количество встреч]</span></li>
+            </ul>
+          </article>
+
+          <article class="package" data-reveal style="--delay: 140ms;">
+            <h3>Разовая консультация</h3>
+            <p class="price"><span class="placeholder">[стоимость]</span></p>
+            <ul>
+              <li>Точечный разбор конкретного запроса</li>
+              <li>Список приоритетных шагов</li>
+              <li><span class="placeholder">[длительность консультации]</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <h2 data-reveal>Образование и повышение квалификации</h2>
+        <p class="section-intro" data-reveal style="--delay: 90ms;">Факты перенесены из брифа и материалов диалога. Юридические формулировки и перечень документов для публикации лучше дополнительно утвердить перед запуском.</p>
+
+        <div class="timeline">
+          <div class="timeline-item" data-reveal>
+            <div class="year">1990-1995</div>
+            <p>Запорожский государственный медицинский университет, базовое медицинское образование.</p>
+          </div>
+
+          <div class="timeline-item" data-reveal style="--delay: 70ms;">
+            <div class="year">2021</div>
+            <p>Профильное обучение и диплом нутрициолога.</p>
+          </div>
+
+          <div class="timeline-item" data-reveal style="--delay: 140ms;">
+            <div class="year">2022-2025</div>
+            <p>Повышение квалификации: Anti-Age, интегративный подход к диабету, функциональное тело, фитнес-нутрициология.</p>
+          </div>
+        </div>
+
+        <div class="certificates">
+          <figure class="certificate" data-reveal>
+            <img src="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" alt="Сертификат по теме продления молодости" loading="lazy">
+            <figcaption>Практикум "Как продлить молодость и отсрочить старость" (2023).</figcaption>
+          </figure>
+
+          <figure class="certificate" data-reveal style="--delay: 70ms;">
+            <img src="photos/discussion-photo_4@06-03-2026_19-29-10.jpg" alt="Сертификат по управлению тревожностью" loading="lazy">
+            <figcaption>Программа "Эмоции под контролем" (2022).</figcaption>
+          </figure>
+
+          <figure class="certificate" data-reveal style="--delay: 140ms;">
+            <img src="photos/discussion-photo_5@06-03-2026_19-29-27.jpg" alt="Сертификат по программе функциональное тело" loading="lazy">
+            <figcaption>Курс "Функциональное тело" (2024).</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="reviews">
+      <div class="container">
+        <h2 data-reveal>Отзывы клиентов</h2>
+        <p class="section-intro" data-reveal style="--delay: 90ms;">Блок добавлен в структуру как обязательный для визитки. Тексты и разрешение на публикацию пока нужно собрать.</p>
+
+        <div class="review-grid">
+          <blockquote class="review" data-reveal>
+            <p><span class="placeholder">[Добавить отзыв клиента #1: запрос, срок работы, результат]</span></p>
+            <footer><span class="placeholder">[Имя / возраст / город]</span></footer>
+          </blockquote>
+
+          <blockquote class="review" data-reveal style="--delay: 70ms;">
+            <p><span class="placeholder">[Добавить отзыв клиента #2: что понравилось в подходе]</span></p>
+            <footer><span class="placeholder">[Имя / возраст / город]</span></footer>
+          </blockquote>
+
+          <blockquote class="review" data-reveal style="--delay: 140ms;">
+            <p><span class="placeholder">[Добавить отзыв клиента #3: измеримый прогресс]</span></p>
+            <footer><span class="placeholder">[Имя / возраст / город]</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 data-reveal>Частые вопросы</h2>
+        <div class="faq">
+          <details data-reveal>
+            <summary>Нужны ли анализы до первой консультации?</summary>
+            <p>Если у вас уже есть свежие анализы, их можно отправить заранее. Если нет, я подскажу минимально необходимый список после первичного опроса.</p>
+          </details>
+
+          <details data-reveal style="--delay: 70ms;">
+            <summary>Через какое время ждать результат?</summary>
+            <p>Первые изменения в самочувствии обычно заметны в течение нескольких недель, но устойчивый эффект зависит от исходного состояния и регулярности выполнения рекомендаций.</p>
+          </details>
+
+          <details data-reveal style="--delay: 140ms;">
+            <summary>Вы работаете только онлайн?</summary>
+            <p><span class="placeholder">[Уточнить географию и формат: только онлайн или онлайн + очно]</span></p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container cta-shell" data-reveal>
+        <div>
+          <h2>Готовы обсудить ваш запрос?</h2>
+          <p>Опишите текущую ситуацию: диагнозы, жалобы, цели и ограничения. Я предложу подходящий формат работы и отвечу, с чего лучше начать именно вам.</p>
+          <div class="hero-actions" style="margin-top: 22px;">
+            <a class="btn btn-primary" href="#">Оставить заявку</a>
+            <a class="btn btn-ghost" href="mailto:example@mail.ru">Написать на почту</a>
+          </div>
+          <p class="caption">Кнопки пока временные: <span class="placeholder">[заменить на реальные контакты и мессенджеры]</span></p>
+        </div>
+
+        <aside class="contact-card">
+          <h3>Контакты для записи</h3>
+          <ul>
+            <li>Telegram: <span class="placeholder">[@username]</span></li>
+            <li>WhatsApp: <span class="placeholder">[+7 ...]</span></li>
+            <li>Телефон: <span class="placeholder">[+7 ...]</span></li>
+            <li>Электронная почта: <span class="placeholder">[example@mail.ru]</span></li>
+            <li>Город / часовой пояс: <span class="placeholder">[уточнить]</span></li>
+            <li>Время ответа: <span class="placeholder">[например, 09:00-19:00]</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Первая версия визитки собрана по материалам site-brief-nutritionist.md и result.json.</p>
+      <p><span class="placeholder">[Добавить политику конфиденциальности и согласие на обработку персональных данных]</span></p>
+    </div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll("[data-reveal]");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.18,
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>
