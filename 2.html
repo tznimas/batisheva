@@ -6,7 +6,7 @@
   <title>Екатерина Батищева | Нутрициолог</title>
   <meta
     name="description"
-    content="Черновая визитка нутрициолога Екатерины Батищевой по материалам Telegram-переписки и канала: метаболизм, инсулинорезистентность, диабет 2 типа, коррекция веса и anti-age подход."
+    content="Сайт-визитка нутрициолога Екатерины Батищевой: метаболизм, инсулинорезистентность, диабет 2 типа, коррекция веса и anti-age подход."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,7 +83,7 @@
 
     .header-row {
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: space-between;
       gap: 24px;
       min-height: 82px;
@@ -112,7 +112,7 @@
 
     .main-nav {
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 8px;
       flex-wrap: wrap;
       justify-content: center;
@@ -134,7 +134,7 @@
     .header-cta,
     .btn {
       display: inline-flex;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       gap: 10px;
       border-radius: 999px;
@@ -192,7 +192,7 @@
       grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
       gap: 40px;
       padding: 54px;
-      align-items: center;
+      align-items: start;
     }
 
     .eyebrow {
@@ -214,8 +214,8 @@
     }
 
     h1 {
-      font-size: clamp(2.7rem, 6vw, 5rem);
-      max-width: 13ch;
+      font-size: clamp(1.8rem, 2.7vw, 2.55rem);
+      max-width: 17ch;
       margin-bottom: 20px;
     }
 
@@ -236,9 +236,17 @@
       max-width: 61ch;
     }
 
-    .hero-copy .support {
-      margin: 0 0 28px;
-      max-width: 62ch;
+    
+
+    .hero-story {
+      display: grid;
+      gap: 14px;
+      margin: 0 0 26px;
+      max-width: 64ch;
+    }
+
+    .hero-story p {
+      margin: 0;
       color: var(--muted);
     }
 
@@ -356,7 +364,7 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      grid-template-columns: 1fr;
       gap: 26px;
       align-items: start;
     }
@@ -391,6 +399,10 @@
     .quote-card p {
       margin: 0;
       color: var(--muted);
+    }
+
+    .about-spacer {
+      height: 18px;
     }
 
     .panel {
@@ -441,7 +453,7 @@
 
     .tag {
       display: inline-flex;
-      align-items: center;
+      align-items: start;
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
@@ -499,7 +511,7 @@
       display: inline-flex;
       width: 44px;
       height: 44px;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       border-radius: 50%;
       background: rgba(69, 107, 91, 0.1);
@@ -535,7 +547,7 @@
       background: rgba(187, 111, 70, 0.12);
       color: var(--warm);
       display: inline-flex;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       font-weight: 800;
       flex-shrink: 0;
@@ -573,6 +585,55 @@
       aspect-ratio: 4 / 3;
       object-fit: cover;
       background: #fff;
+    }
+
+    .education-gallery a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      cursor: zoom-in;
+    }
+
+    .education-gallery a:hover img {
+      filter: brightness(0.98);
+    }
+
+    .education-gallery img.rotate-90 {
+      object-fit: contain;
+      transform: rotate(-90deg) scale(0.78);
+      transform-origin: center;
+    }
+
+    .image-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(24, 20, 16, 0.88);
+      z-index: 9999;
+    }
+
+    .image-modal.is-open {
+      display: flex;
+    }
+
+    .image-modal img {
+      max-width: min(96vw, 1200px);
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      background: #fff;
+    }
+
+    .image-modal img.rotate-90 {
+      transform: rotate(-90deg);
+      max-width: 82vh;
+      max-height: 86vw;
     }
 
     .education-gallery figcaption {
@@ -733,7 +794,6 @@
         <span class="brand-title">Екатерина Батищева</span>
       </a>
       <nav class="main-nav" aria-label="Основная навигация">
-        <a href="#about">Обо мне</a>
         <a href="#requests">Запросы</a>
         <a href="#channel">Канал</a>
         <a href="#education">Образование</a>
@@ -744,36 +804,60 @@
   </header>
 
   <main id="top">
-    <section class="hero">
+        <section class="hero">
       <div class="container">
         <div class="hero-shell">
           <div class="hero-grid">
             <div class="hero-copy">
-              <p class="eyebrow">Черновик визитки на основе Telegram-экспорта</p>
-              <h1>29 лет в фармации научили меня искать причину, а не маскировать симптомы</h1>
+              <p class="eyebrow">Интегративный нутрициолог</p>
+              <h1>29 лет с вами на пути к здоровью: Почему я знаю, что диабет можно предотвратить</h1>
               <p class="lead">
-                Первая версия страницы собрана по переписке и Telegram-каналу. В центре работы:
-                инсулинорезистентность, преддиабет, диабет 2 типа, метаболический синдром,
-                коррекция веса и активное долголетие без жестких диет.
+                Меня зовут Екатерина Батищева, и я дипломированный провизор.
+                За моими плечами 29 лет работы в фармации.
               </p>
-              <p class="support">
-                Я соединяю медицинскую базу, нутрициологию, разбор анализов и персональный подход,
-                чтобы человек получал не очередной список запретов, а понятную стратегию восстановления.
-              </p>
+              <div class="hero-story">
+                <p>
+                  Долгие годы я ежедневно работала с людьми, с теми, кто столкнулся с болью и болезнью.
+                  И чем больше я погружалась в мир лекарств, тем отчетливее понимала горькую правду:
+                  таблетки помогают справиться лишь со следствием, в то время как истинная причина
+                  продолжает разрушать организм изнутри.
+                </p>
+                <p>
+                  Фармацевтика за эти годы сделала колоссальный скачок вперед. Появились тысячи новых препаратов,
+                  полки аптек ломятся от БАДов. Но парадокс в том, что здоровее мы не становимся.
+                  Количество болезней не уменьшается, а эпидемия нарушений углеводного обмена бьет все рекорды.
+                </p>
+                <p>
+                  Сегодня я с особой болью и тревогой наблюдаю за ситуацией с инсулинорезистентностью,
+                  преддиабетом и диабетом 1 и 2 типа. И самое страшное - это не просто цифры на глюкометре.
+                  Это разрушенные сосуды, больные почки, остановки сердца, инсульты и инфаркты,
+                  которые настигают даже совсем молодых людей.
+                </p>
+                <p>Но есть и другая сторона медали. Есть надежда. И я вижу ее каждый день.</p>
+                <p>
+                  Я искренне верю и знаю, что судьбу человека можно изменить. Диабет - это не приговор,
+                  который нам выносят врачи. Это состояние, которое можно предотвратить и даже повернуть вспять.
+                  Видеть, как человек уходит от опасного диагноза и возвращается к полноценной, здоровой жизни -
+                  вот что придает смысл моей работе.
+                </p>
+                <p>
+                  Я здесь для того, чтобы помочь вам найти и устранить причину,
+                  а не просто «запихнуть» симптомы очередной таблеткой.
+                </p>
+              </div>
               <div class="hero-actions">
                 <a class="btn btn-primary" href="#contacts">Записаться на консультацию</a>
-                <a class="btn btn-secondary" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer">Открыть Telegram-канал</a>
+                <a class="btn btn-secondary" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer">Telegram-канал</a>
               </div>
               <ul class="fact-row">
+                <li>29 лет опыта в фармации</li>
                 <li>Высшее медицинское образование</li>
-                <li>ЗГМУ, выпуск 1995 <span class="placeholder">[формулировку диплома подтвердить]</span></li>
                 <li>Нутрициология с 2021 года</li>
                 <li>Anti-Age и метаболизм</li>
                 <li>Онлайн / офлайн <span class="placeholder">[уточнить]</span></li>
               </ul>
               <p class="hero-note">
-                В этой версии сохранены явные плейсхолдеры для контактов, стоимости, географии приема
-                и финальных формулировок об образовании.
+                При наличии диагноза работа выстраивается в контакте с лечащим врачом.
               </p>
             </div>
 
@@ -781,68 +865,8 @@
               <div class="portrait-card">
                 <img src="photos/1.png" alt="Екатерина Батищева">
               </div>
-              <div class="floating-card">
-                <strong>Сильная сторона подхода</strong>
-                <p>
-                  Работаю не только с меню, а с причиной: анализы, питание, образ жизни,
-                  стресс, дефициты и восстановление.
-                </p>
-              </div>
-              <div class="floating-note">
-                <strong>Что нужно подтвердить до публикации</strong>
-                <p>
-                  <span class="placeholder">[Telegram для записи]</span>
-                  <span class="placeholder">[WhatsApp]</span>
-                  <span class="placeholder">[стоимость]</span>
-                  <span class="placeholder">[город / формат приема]</span>
-                </p>
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Обо мне</p>
-          <h2>Подход вырос из многолетней практики и наблюдения за тем, как болезнь легче предупредить, чем догонять последствия</h2>
-          <p class="section-intro">
-            По материалам переписки был выбран эмоциональный первый экран: опыт в фармации и желание
-            работать с причиной, а не только с внешними проявлениями. Здесь эта идея сокращена до
-            экранной версии для визитки.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <article class="quote-card">
-            <blockquote>
-              «Таблетка может снять симптом, но здоровье возвращается тогда, когда мы меняем причину:
-              питание, ритм жизни, дефициты, стресс и ежедневные привычки».
-            </blockquote>
-            <p>
-              Текст адаптирован из выбранного в переписке варианта первого блока.
-              При необходимости можно вернуть более длинную авторскую историю на отдельный экран.
-            </p>
-          </article>
-
-          <article class="panel">
-            <p>
-              В черновике я сохранил основной смысл согласованного позиционирования: интегративный
-              нутрициолог с медицинской базой, который помогает не по шаблону, а через персональную работу
-              с анализами, рационом, восстановлением и образом жизни.
-            </p>
-            <p>
-              Из обсуждения и канала хорошо читаются три опоры бренда: метаболическое здоровье,
-              активное долголетие и мягкое объяснение сложных тем простым человеческим языком.
-            </p>
-            <ul class="mini-list">
-              <li>не жесткие диеты, а реалистичный план без срывов;</li>
-              <li>не абстрактный wellness, а опора на симптомы, анализы и логику организма;</li>
-              <li>не единичная рекомендация, а понятный маршрут изменений <span class="placeholder">[формат сопровождения уточнить]</span>.</li>
-            </ul>
-          </article>
         </div>
       </div>
     </section>
@@ -851,10 +875,10 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">С какими запросами</p>
-          <h2>Направления, которые уже подтверждаются перепиской и контентом канала</h2>
+          <h2>Основные направления работы</h2>
           <p class="section-intro">
-            Эти блоки можно считать основой для визитки. Если позже появятся точные пакеты услуг и цены,
-            сюда легко добавить отдельный экран с коммерческими предложениями.
+            Работа строится вокруг состояний, где питание, образ жизни и восстановление напрямую влияют
+            на самочувствие, показатели анализов и качество жизни.
           </p>
         </div>
 
@@ -863,8 +887,8 @@
             <span class="tag">Метаболизм</span>
             <h3>Преддиабет и инсулинорезистентность</h3>
             <p>
-              Помощь на этапе, когда важно заметить проблему раньше, чем она закрепится как диагноз.
-              Акцент на разбор питания, образа жизни и показателей углеводного обмена.
+              Помогаю заметить проблему вовремя, выстроить питание и режим,
+              чтобы поддержать чувствительность к инсулину и снизить риски.
             </p>
           </article>
 
@@ -872,8 +896,8 @@
             <span class="tag">Поддержка</span>
             <h3>Диабет 2 типа</h3>
             <p>
-              В переписке эта тема обозначена как одна из ключевых. Формулировка в черновике сохранена
-              осторожной: сопровождение и коррекция образа жизни в тандеме с лечащим врачом.
+              Сопровождение по питанию и образу жизни, помощь в создании более стабильного режима,
+              работа в контакте с лечащим врачом.
             </p>
           </article>
 
@@ -881,8 +905,8 @@
             <span class="tag">Система</span>
             <h3>Метаболический синдром</h3>
             <p>
-              Работа не с отдельными жалобами по очереди, а со связкой: сахар, вес, давление, липиды,
-              энергия, режим и ежедневные привычки.
+              Работа со связкой факторов: сахар, вес, давление, липиды, уровень энергии,
+              ежедневные привычки и общая нагрузка на организм.
             </p>
           </article>
 
@@ -890,7 +914,7 @@
             <span class="tag">Вес</span>
             <h3>Коррекция веса без крайностей</h3>
             <p>
-              Поиск причин набора веса: не только рацион, но и дефициты, стресс, восстановление,
+              Поиск причин набора веса: рацион, стресс, дефициты, восстановление,
               пищевое поведение и устойчивость результата.
             </p>
           </article>
@@ -899,17 +923,17 @@
             <span class="tag">Anti-Age</span>
             <h3>Активное долголетие</h3>
             <p>
-              Это направление явно прослеживается в канале: здоровье в долгую, ресурс,
-              профилактика возрастных изменений и качество жизни, а не просто борьба с симптомами.
+              Питание и образ жизни для энергии, поддержания ресурса,
+              профилактики возрастных изменений и хорошего самочувствия в долгую.
             </p>
           </article>
 
           <article class="service-card">
             <span class="tag">Ресурс</span>
-            <h3>Энергия, мозг, восстановление</h3>
+            <h3>Сон, стресс и восстановление</h3>
             <p>
-              Канал показывает расширение экспертности в сторону сна, нервной системы,
-              концентрации, стресса и привычек, которые напрямую влияют на питание и метаболизм.
+              Работа с привычками, которые влияют на уровень энергии, концентрацию,
+              настроение, сон и устойчивость к ежедневной нагрузке.
             </p>
           </article>
         </div>
@@ -920,51 +944,51 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Telegram-канал</p>
-          <h2>Контент канала помогает раскрыть тон и экспертизу</h2>
+          <h2>О чем пишу в Telegram</h2>
           <p class="section-intro">
-            В экспортированном канале уже есть темы, которые хорошо работают на доверие:
-            anti-age, полезные привычки, ресурс мозга, детокс, долголетие и понятное объяснение физиологии.
+            В канале делюсь материалами о питании, метаболизме, здоровом старении,
+            полезных привычках, сне и ресурсе нервной системы.
           </p>
         </div>
 
         <div class="topic-grid">
           <article class="topic-card">
-            <span class="tag">Из канала</span>
-            <h3>Долголетие без крайностей</h3>
+            <span class="tag">Telegram</span>
+            <h3>Активное долголетие</h3>
             <p>
-              Посты про «голубые зоны» и активное долголетие формируют мягкий, зрелый тон:
-              здоровье как система ежедневных привычек, а не как временный челлендж.
+              Пишу о том, как ежедневные привычки, движение, питание и ритм жизни
+              влияют на самочувствие и качество жизни в долгую.
             </p>
             <div class="topic-media">
               <img src="photos/telegram-channel-photo_3@23-06-2024_19-41-39.jpg" alt="Фото Екатерины Батищевой у горной реки">
             </div>
-            <p class="topic-footer">Тема: здоровье в долгую, энергия, ритм жизни</p>
+            <p class="topic-footer">Простые практики для здоровья в долгую</p>
           </article>
 
           <article class="topic-card">
-            <span class="tag">Из канала</span>
-            <h3>Anti-Age и питание для клеточного ресурса</h3>
+            <span class="tag">Telegram</span>
+            <h3>Anti-Age и питание</h3>
             <p>
-              Материалы про сиртуины, NAD+, полифенолы и поддерживающие привычки показывают, что канал
-              можно использовать как экспертный блок с актуальными темами про возраст и метаболизм.
+              Разбираю питание, микроэлементы, клеточный ресурс, полезные продукты
+              и поддерживающие привычки без крайностей и модных перегибов.
             </p>
             <div class="topic-media">
               <img src="photos/telegram-channel-photo_8@20-02-2026_21-21-20.jpg" alt="Чек-лист по привычкам для anti-age эффекта">
             </div>
-            <p class="topic-footer">Тема: anti-age, питание, полезные привычки</p>
+            <p class="topic-footer">Питание для энергии и устойчивого ресурса</p>
           </article>
 
           <article class="topic-card">
-            <span class="tag">Из канала</span>
-            <h3>Мозг, нервная система и повседневный ресурс</h3>
+            <span class="tag">Telegram</span>
+            <h3>Мозг, сон и восстановление</h3>
             <p>
-              Контент о концентрации, дофамине, серотонине, сне и эмоциональной устойчивости делает образ
-              специалиста более объемным: это не только питание, но и качество повседневной жизни.
+              Делюсь наблюдениями о концентрации, стрессе, сне, гормонах радости
+              и повседневных действиях, которые помогают не жить на износ.
             </p>
             <div class="topic-media">
               <img src="photos/telegram-channel-photo_7@04-02-2026_18-50-11.jpg" alt="Инфографика про дофамин, серотонин, окситоцин и мелатонин">
             </div>
-            <p class="topic-footer">Тема: стресс, сон, внимание, восстановление</p>
+            <p class="topic-footer">Материалы о ресурсе и нервной системе</p>
           </article>
         </div>
       </div>
@@ -973,18 +997,18 @@
     <section class="section section-soft">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Как может выглядеть работа</p>
-          <h2>Блок под услуги и процесс я сделал в мягком черновом формате</h2>
+          <p class="eyebrow">Формат работы</p>
+          <h2>Как проходит работа</h2>
           <p class="section-intro">
-            Здесь пока нет подтвержденных цен и длительности, поэтому оставил только логику маршрута и места
-            для будущих деталей.
+            От первого запроса до сопровождения: без перегруза, с понятными шагами
+            и опорой на реальную повседневную жизнь.
           </p>
         </div>
 
         <div class="steps-grid">
           <article class="step-card">
             <span class="step-number">01</span>
-            <h3>Знакомство и анкета</h3>
+            <h3>Первичная анкета</h3>
             <p>
               Короткий бриф по жалобам, целям, рациону и образу жизни.
               <span class="placeholder">[добавить ссылку на анкету]</span>
@@ -993,9 +1017,10 @@
 
           <article class="step-card">
             <span class="step-number">02</span>
-            <h3>Разбор анализов и симптомов</h3>
+            <h3>Разбор анализов</h3>
             <p>
-              Предварительная оценка текущего состояния, факторов риска и точек, с которых лучше начинать.
+              Предварительная оценка состояния, факторов риска и точек,
+              с которых лучше начинать работу.
               <span class="placeholder">[список обязательных анализов уточнить]</span>
             </p>
           </article>
@@ -1004,7 +1029,8 @@
             <span class="step-number">03</span>
             <h3>Персональный план</h3>
             <p>
-              Питание, режим, привычки, наблюдение за динамикой и понятные шаги без перегруза.
+              Питание, режим, привычки, ориентиры по динамике и понятные шаги
+              без перегруза.
               <span class="placeholder">[формат документа / чек-листа уточнить]</span>
             </p>
           </article>
@@ -1013,7 +1039,7 @@
             <span class="step-number">04</span>
             <h3>Сопровождение</h3>
             <p>
-              Ответы на вопросы и корректировки по ходу работы.
+              Корректировки по ходу работы и ответы на вопросы.
               <span class="placeholder">[срок, частота созвонов, чат и стоимость уточнить]</span>
             </p>
           </article>
@@ -1025,10 +1051,10 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Образование</p>
-          <h2>Визитка уже может опираться на факты из переписки и приложенные сертификаты</h2>
+          <h2>Образование и повышение квалификации</h2>
           <p class="section-intro">
-            Ниже я собрал только те пункты, которые прямо фигурируют в переписке и подтверждаются экспортом.
-            Если часть формулировок нужно скорректировать юридически, они уже выделены как места для уточнения.
+            Медицинская база и профильное обучение помогают смотреть на состояние шире,
+            чем только через рацион и список продуктов.
           </p>
         </div>
 
@@ -1037,7 +1063,7 @@
             <article class="credential-card">
               <div class="credential-mark">01</div>
               <div>
-                <strong>Запорожский государственный медицинский университет, 1990–1995</strong>
+                <strong>Запорожский государственный медицинский университет, 1990-1995</strong>
                 <p>Базовое медицинское образование. <span class="placeholder">[точную квалификацию по диплому подтвердить]</span></p>
               </div>
             </article>
@@ -1046,7 +1072,7 @@
               <div class="credential-mark">02</div>
               <div>
                 <strong>Профильное обучение по нутрициологии, 2021</strong>
-                <p>В переписке эта точка обозначена как переход в новую профессиональную специализацию.</p>
+                <p>Специализация в области нутрициологии и персональной коррекции питания.</p>
               </div>
             </article>
 
@@ -1069,7 +1095,7 @@
             <article class="credential-card">
               <div class="credential-mark">05</div>
               <div>
-                <strong>Дополнительные программы из приложенных материалов</strong>
+                <strong>Дополнительные программы</strong>
                 <p>
                   «Как продлить молодость и отсрочить старость» (2023),
                   «Эмоции под контролем: как избавиться от тревожности» (2022),
@@ -1081,19 +1107,27 @@
 
           <div class="education-gallery">
             <figure>
-              <img src="photos/discussion-photo_6@06-03-2026_19-30-27.jpg" alt="Удостоверение о повышении квалификации по age management">
+              <a href="photos/discussion-photo_6@06-03-2026_19-30-27.jpg" class="edu-link" data-full="photos/discussion-photo_6@06-03-2026_19-30-27.jpg" data-rotated="true">
+                <img class="rotate-90" src="photos/discussion-photo_6@06-03-2026_19-30-27.jpg" alt="Удостоверение о повышении квалификации по age management">
+              </a>
               <figcaption>Повышение квалификации: управление возрастом и активное долголетие.</figcaption>
             </figure>
             <figure>
-              <img src="photos/discussion-photo_7@06-03-2026_19-30-27.jpg" alt="Удостоверение о повышении квалификации по теме сахарного диабета">
+              <a href="photos/discussion-photo_7@06-03-2026_19-30-27.jpg" class="edu-link" data-full="photos/discussion-photo_7@06-03-2026_19-30-27.jpg" data-rotated="true">
+                <img class="rotate-90" src="photos/discussion-photo_7@06-03-2026_19-30-27.jpg" alt="Удостоверение о повышении квалификации по теме сахарного диабета">
+              </a>
               <figcaption>Повышение квалификации: интегративный подход к сахарному диабету.</figcaption>
             </figure>
             <figure>
-              <img src="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" alt="Сертификат по теме продления молодости">
+              <a href="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" class="edu-link" data-full="photos/discussion-photo_3@06-03-2026_19-28-53.jpg">
+                <img src="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" alt="Сертификат по теме продления молодости">
+              </a>
               <figcaption>Практикум по теме продления молодости и отсрочки возрастных изменений.</figcaption>
             </figure>
             <figure>
-              <img src="photos/discussion-photo_5@06-03-2026_19-29-27.jpg" alt="Сертификат по программе функциональное тело">
+              <a href="photos/discussion-photo_5@06-03-2026_19-29-27.jpg" class="edu-link" data-full="photos/discussion-photo_5@06-03-2026_19-29-27.jpg">
+                <img src="photos/discussion-photo_5@06-03-2026_19-29-27.jpg" alt="Сертификат по программе функциональное тело">
+              </a>
               <figcaption>Дополнительное обучение, расширяющее тему функционального состояния тела.</figcaption>
             </figure>
           </div>
@@ -1104,11 +1138,11 @@
     <section class="section section-soft">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Отзывы и кейсы</p>
-          <h2>Место под социальное доказательство уже предусмотрено</h2>
+          <p class="eyebrow">Отзывы</p>
+          <h2>Отзывы клиентов</h2>
           <p class="section-intro">
-            В экспорте нет готовых отзывов, поэтому я не стал придумывать их. Вместо этого оставил понятные
-            слоты под реальные кейсы, когда появятся согласованные материалы.
+            Здесь можно разместить короткие истории клиентов и результаты работы
+            после согласования публикации.
           </p>
         </div>
 
@@ -1135,20 +1169,20 @@
       <div class="container">
         <div class="contact-shell">
           <article class="contact-card">
-            <p class="eyebrow">Контакты</p>
-            <h2>Готова обсудить ваш запрос и собрать понятный маршрут к более стабильному самочувствию</h2>
+            <p class="eyebrow">Запись на консультацию</p>
+            <h2>Обсудим ваш запрос</h2>
             <p>
-              Для финальной версии страницы осталось подтвердить каналы записи, стоимость консультации,
-              город и рабочее время. Пока я сохранил все отсутствующие данные как явные плейсхолдеры.
+              Напишите, если хотите разобраться с питанием, сахаром, весом,
+              энергией, возрастными изменениями или сопровождением по анализам.
             </p>
             <div class="contact-actions">
-              <a class="btn btn-primary" href="#"><span class="placeholder">[добавить ссылку на запись в Telegram]</span></a>
-              <a class="btn btn-secondary" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer">Перейти в канал</a>
+              <a class="btn btn-primary" href="#">Написать в Telegram</a>
+              <a class="btn btn-secondary" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer">Telegram-канал</a>
             </div>
           </article>
 
           <aside class="contact-card">
-            <h3>Что нужно заполнить</h3>
+            <h3>Контакты</h3>
             <ul class="contact-list">
               <li>Telegram для записи: <span class="placeholder">[@username]</span></li>
               <li>WhatsApp: <span class="placeholder">[+7 ...]</span></li>
@@ -1160,8 +1194,7 @@
               <li>Время ответа: <span class="placeholder">[например, 10:00-19:00]</span></li>
             </ul>
             <div class="draft-note">
-              Telegram-канал из экспорта: <a href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer">@healthylife_Ekaterina</a>.<br>
-              Если это не основной публичный адрес, его можно заменить в одном месте без перестройки страницы.
+              Telegram-канал: <a href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer">@healthylife_Ekaterina</a>
             </div>
           </aside>
         </div>
@@ -1171,9 +1204,66 @@
 
   <footer class="footer">
     <div class="container footer-row">
-      <div>Черновая версия визитки сохранена как <strong>index2.html</strong>.</div>
-      <div>Следующий шаг: подтвердить контакты, формат работы, цены и финальные юридические формулировки.</div>
+      <div>Екатерина Батищева • Нутрициолог</div>
+      <div>Питание, метаболизм, активное долголетие</div>
     </div>
   </footer>
+
+  <div class="image-modal" id="image-modal" aria-hidden="true">
+    <img id="image-modal-img" src="" alt="">
+  </div>
+
+  <script>
+    (function () {
+      var modal = document.getElementById("image-modal");
+      var modalImg = document.getElementById("image-modal-img");
+      var links = document.querySelectorAll(".edu-link");
+
+      links.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          var src = link.getAttribute("data-full") || link.getAttribute("href");
+          var isRotated = link.getAttribute("data-rotated") === "true";
+          var thumb = link.querySelector("img");
+          modalImg.src = src;
+          modalImg.alt = thumb ? thumb.alt : "Сертификат";
+          modalImg.classList.toggle("rotate-90", isRotated);
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+        });
+      });
+
+      modal.addEventListener("click", function () {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+        modalImg.classList.remove("rotate-90");
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("is-open")) {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          modalImg.src = "";
+          modalImg.classList.remove("rotate-90");
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,6 @@
 *
 !.gitignore
-!index.html
-!index2.html
-!index3.html
+!1.html
+!2.html
 !photos/
 !photos/**
