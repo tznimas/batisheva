@@ -1,0 +1,777 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Екатерина Батищева | Нутрициолог по метаболизму, сахару и долголетию</title>
+  <meta name="description" content="Нутрициолог Екатерина Батищева: инсулинорезистентность, преддиабет, диабет 2 типа, коррекция веса, anti-age, сон и восстановление.">
+  <style>
+    :root {
+      --bg: #f7f9e6;
+      --bg-soft: #eef3dd;
+      --surface: rgba(255, 252, 247, 0.92);
+      --surface-2: #fbfdf0;
+      --ink: #203026;
+      --muted: #4d5d54;
+      --line: rgba(32, 48, 38, 0.1);
+      --accent: #3e6a52;
+      --accent-strong: #274534;
+      --accent-soft: #eef6df;
+      --warm: #bb8550;
+      --warm-soft: #eef3d8;
+      --shadow: 0 24px 60px rgba(39, 51, 42, 0.12);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(124, 179, 66, 0.14), transparent 26%),
+        radial-gradient(circle at 85% 0%, rgba(124, 179, 66, 0.14), transparent 28%),
+        linear-gradient(180deg, #f9fce8 0%, #f7f9e6 36%, #f5f7e4 100%);
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1280px, calc(100vw - 48px)); margin: 0 auto; }
+    .section { padding: 76px 0; }
+    .section-soft { position: relative; }
+    .section-soft::before {
+      content: "";
+      position: absolute;
+      inset: 14px 12px;
+      border-radius: 32px;
+      background: linear-gradient(180deg, rgba(249, 252, 232, 0.82), rgba(241, 246, 225, 0.74));
+      border: 1px solid rgba(62, 106, 82, 0.08);
+      z-index: 0;
+    }
+    .section-soft > .container { position: relative; z-index: 1; }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+      color: #25352a;
+    }
+    h1 { font-size: clamp(1.58rem, 1.45vw + 0.5rem, 2.3rem); max-width: 18ch; line-height: 0.98; }
+    h2 { font-size: clamp(1.55rem, 1.55vw + 0.75rem, 2.1rem); max-width: 28ch; line-height: 1.12; }
+    h3 { font-size: clamp(1.02rem, 0.95vw + 0.65rem, 1.22rem); line-height: 1.2; }
+    p { margin: 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin: 0 0 14px;
+      border-radius: 999px;
+      background: rgba(62, 106, 82, 0.12);
+      color: var(--accent-strong);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-head { display: grid; gap: 16px; margin-bottom: 30px; max-width: 1120px; }
+    .section-head p:last-child, .lead, .about-copy, .cta-copy { color: var(--muted); font-size: 1.08rem; line-height: 1.72; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      backdrop-filter: blur(16px);
+      background: rgba(250, 246, 240, 0.78);
+      border-bottom: 1px solid rgba(39, 69, 52, 0.08);
+    }
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 62px;
+    }
+    .brand { display: grid; gap: 4px; }
+    .brand-mark { font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); }
+    .brand-name { font-family: Georgia, "Times New Roman", serif; font-size: 1.38rem; line-height: 1; }
+    .nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: 180ms ease;
+    }
+    .nav a:hover { background: rgba(62, 106, 82, 0.12); color: var(--ink); }
+
+    .btn, .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .btn:hover, .pill:hover { transform: translateY(-1px); }
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+      box-shadow: 0 16px 30px rgba(39, 69, 52, 0.2);
+    }
+    .btn-secondary {
+      color: var(--accent-strong);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(62, 106, 82, 0.14);
+    }
+
+    .hero { padding: 10px 0 24px; }
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(140deg, rgba(255, 252, 247, 0.98), rgba(242, 247, 228, 0.92));
+      border: 1px solid rgba(62, 106, 82, 0.12);
+      box-shadow: var(--shadow);
+    }
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      inset: auto -90px -90px auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(62, 106, 82, 0.16), rgba(62, 106, 82, 0));
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(420px, 0.8fr);
+      gap: 36px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-copy { display: grid; gap: 10px; }
+    .lead { max-width: 56ch; font-size: 0.94rem; line-height: 1.56; }
+    .hero-points, .proof-card ul, .cta-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .hero-points { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .hero-points li,
+    .stat-card,
+    .signal-card,
+    .result-card,
+    .direction-card,
+    .step-card,
+    .proof-card,
+    .content-card,
+    .doc-card,
+    .faq-card,
+    .note {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: 0 18px 36px rgba(39, 51, 42, 0.08);
+    }
+    .hero-points li { padding: 12px 14px; border-radius: 16px; color: #314036; font-size: 0.88rem; line-height: 1.42; }
+    .hero-points strong, .stat-card strong, .result-card strong, .doc-card strong { display: block; color: var(--ink); margin-bottom: 3px; }
+    .hero-actions, .hero-meta, .cta-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { padding: 7px 10px; background: rgba(39, 69, 52, 0.1); border: 1px solid rgba(39, 69, 52, 0.1); color: var(--accent-strong); font-size: 0.78rem; font-weight: 700; }
+    .hero-note {
+      padding: 16px 18px;
+      border-left: 4px solid var(--warm);
+      border-radius: 16px;
+      background: rgba(187, 133, 80, 0.1);
+      color: #5c4c3d;
+      font-size: 0.95rem;
+      max-width: 60ch;
+    }
+
+    .portrait-wrap { position: relative; }
+    .portrait-card {
+      width: 100%;
+      padding: 18px;
+      border-radius: 30px;
+      background: linear-gradient(160deg, rgba(236, 244, 223, 0.95), rgba(255, 252, 245, 0.98));
+      border: 1px solid rgba(62, 106, 82, 0.12);
+      box-shadow: var(--shadow);
+    }
+    .portrait-card img {
+      width: 100%;
+      aspect-ratio: 1.02 / 1;
+      object-fit: cover;
+      object-position: center 10%;
+      border-radius: 20px;
+    }
+    @media (min-width: 861px) {
+      .hero-points, .hero-note { display: none; }
+      .stats-row { display: none !important; }
+      .hero-meta { margin-top: 2px; }
+    }
+    .float-bottom span { color: rgba(246, 241, 232, 0.82); }
+
+    .stats-row, .signals-grid, .results-grid, .directions-grid, .steps-grid, .proof-grid, .content-grid, .docs-grid, .faq-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .stats-row { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 10px; }
+    .signals-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .results-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .directions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .proof-grid { grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr); align-items: start; }
+    .content-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .docs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .content-card, .doc-card, .faq-card, .note { padding: 24px; border-radius: 24px; }
+    .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .content-card, .doc-card, .faq-card { background: rgba(255, 252, 247, 0.98); }
+    .signal-card, .result-card, .direction-card, .step-card, .proof-card, .content-card, .faq-card, .doc-card { display: grid; gap: 12px; }
+    .note { background: linear-gradient(180deg, rgba(241, 222, 200, 0.54), rgba(255, 252, 247, 0.88)); color: #4f594f; }
+    .tag, .step-number {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(62, 106, 82, 0.1);
+      color: var(--accent-strong);
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .warm-tag { background: rgba(187, 133, 80, 0.16); color: #744f2f; }
+    .signal-card p, .result-card p, .direction-card p, .step-card p, .proof-card p, .content-card p, .faq-card p, .doc-card p, .stat-card p { color: var(--muted); font-size: 0.98rem; line-height: 1.65; }
+    .proof-card li, .cta-list li { display: flex; gap: 12px; color: #334137; }
+    .proof-card li::before, .cta-list li::before { content: "•"; color: var(--warm); font-weight: 800; }
+    .about-card {
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(62, 106, 82, 0.12);
+      background: linear-gradient(180deg, rgba(255, 252, 247, 0.95), rgba(235, 242, 238, 0.82));
+      box-shadow: var(--shadow);
+    }
+    .about-card img {
+      display: block;
+      width: calc(100% - 32px);
+      margin: 16px 16px 0;
+      aspect-ratio: 1 / 1.08;
+      object-fit: cover;
+      object-position: center 72%;
+      border-radius: 24px;
+    }
+    .about-copy { padding: 24px; }
+    .content-card img, .doc-card img { width: 100%; border-radius: 18px; border: 1px solid rgba(62, 106, 82, 0.12); }
+    .content-card img { aspect-ratio: 1 / 0.92; object-fit: cover; }
+    .doc-card img { aspect-ratio: 1 / 1.08; object-fit: cover; background: #fff; }
+    .caption { color: #365842; font-size: 0.96rem; font-weight: 700; }
+    .content-link { width: fit-content; }
+    .content-link.image-link { display: block; width: 100%; }
+    .content-link.caption-link { display: inline-flex; }
+    .content-link:hover .caption,
+    .content-link:hover h3,
+    .content-link:hover .tag { color: var(--accent-strong); }
+
+    .cta-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(290px, 0.75fr);
+      gap: 22px;
+      padding: 32px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(31, 45, 35, 0.96), rgba(62, 106, 82, 0.94));
+      color: #f8f3eb;
+      box-shadow: 0 28px 60px rgba(27, 40, 31, 0.24);
+    }
+    .cta-shell h2, .cta-shell .cta-copy, .cta-shell .cta-list li, .cta-side { color: inherit; }
+    .cta-shell .eyebrow { background: rgba(255,255,255,0.16); color: #fff7ee; border: 1px solid rgba(255,255,255,0.18); }
+    .cta-shell .btn-primary { background: linear-gradient(135deg, #d2a576 0%, #b47f48 100%); box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22); }
+    .cta-shell .btn-secondary { border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.08); color: #fff8f0; }
+    .cta-side { padding: 16px; border-radius: 26px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); }
+
+    .footer { padding: 28px 0 92px; color: #5e675f; font-size: 0.94rem; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid rgba(39, 69, 52, 0.12); }
+    .mobile-bar {
+      position: fixed;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 80;
+      display: none;
+      padding: 10px;
+      border-radius: 20px;
+      background: rgba(31, 42, 34, 0.92);
+      box-shadow: 0 18px 44px rgba(24, 32, 27, 0.32);
+      backdrop-filter: blur(14px);
+    }
+    .mobile-bar .btn { width: 100%; }
+
+    @media (max-width: 1080px) {
+      .hero-grid, .proof-grid, .cta-shell { grid-template-columns: 1fr; }
+      .results-grid, .steps-grid, .docs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 860px) {
+      body { padding-bottom: 86px; }
+      .section { padding: 64px 0; }
+      .nav { display: none; }
+      .header-row > .btn { display: none; }
+      .hero-points, .signals-grid, .stats-row, .directions-grid, .content-grid, .faq-grid { grid-template-columns: 1fr; }
+      .header-row { align-items: start; padding: 14px 0; }
+      .hero-actions, .cta-actions { flex-direction: column; }
+      .hero-actions .btn, .cta-actions .btn { width: 100%; }
+      .mobile-bar { display: block; }
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: clamp(1.55rem, 7vw, 2.05rem); max-width: 100%; }
+      h2 { font-size: clamp(1.5rem, 6vw, 1.9rem); max-width: 100%; }
+      .hero { padding-top: 16px; }
+      .hero-shell { padding: 14px; }
+      .results-grid, .steps-grid, .docs-grid { grid-template-columns: 1fr; }
+      .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .content-card, .doc-card, .faq-card, .note, .cta-side { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#top" aria-label="На первый экран">
+        <span class="brand-mark">Нутрициолог</span>
+        <span class="brand-name">Екатерина Батищева</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#signals">Когда стоит обратиться</a>
+        <a href="#directions">Запросы</a>
+        <a href="#approach">Как проходит работа</a>
+        <a href="#proof">Доверие</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary" href="#contacts">Записаться</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">Нутрициолог с медицинской базой</p>
+              <h1>Помогаю вернуть в баланс вес, сахар и энергию</h1>
+              <p class="lead">
+                За 29 лет в фармации я слишком часто видела, как люди годами борются со следствием,
+                а причина остаётся без внимания. Поэтому в работе я помогаю понять,
+                что именно выводит организм из равновесия, и мягко выстроить питание, режим и опору на анализы без жёстких диет.
+              </p>
+
+              <ul class="hero-points">
+                <li><strong>Если тянет на сладкое и вес не уходит</strong>Собираем режим без постоянных срывов и качелей аппетита.</li>
+                <li><strong>Если тревожат сахар и анализы</strong>Смотрим на питание, сон, стресс и образ жизни в комплексе.</li>
+                <li><strong>Если не хватает энергии</strong>Ищем, что забирает ресурс: ритм дня, дефициты, перегрузка, нерегулярное питание.</li>
+                <li><strong>Если нужен anti-age подход</strong>Работаем на качество жизни, ясность головы, устойчивость и активное долголетие.</li>
+              </ul>
+
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#contacts">Записаться</a>
+                <a class="btn btn-secondary" href="#approach">Как проходит работа</a>
+              </div>
+
+              <div class="hero-meta">
+                <a class="pill" href="#proof">29 лет в фармации</a>
+                <a class="pill" href="#proof">Медицинская база</a>
+                <a class="pill" href="#documents">Документы и обучение</a>
+              </div>
+
+              <p class="hero-note">При установленном диагнозе работа строится в контакте с лечащим врачом и не заменяет медицинское лечение.</p>
+            </div>
+
+            <div class="portrait-wrap">
+              <div class="portrait-card">
+                <img src="photos/1.png" alt="Екатерина Батищева, нутрициолог">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <article class="stat-card">
+            <strong>29 лет практического опыта</strong>
+            <p>Опыт в фармации усиливает внимательность к медикаментам, анализам и ограничениям пациента.</p>
+          </article>
+          <article class="stat-card">
+            <strong>Медицинская база + нутрициология</strong>
+            <p>Фундаментальное образование сочетается с дополнительным обучением по диабету и age management.</p>
+          </article>
+          <article class="stat-card">
+            <strong>Спокойный, системный подход</strong>
+            <p>Без запугивания и крайностей: пошаговая работа под реальную жизнь, а не под идеальную схему.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="signals" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Когда стоит обратиться</p>
+          <h2>Вам сюда, если вы узнаете себя хотя бы в части этих сигналов</h2>
+          <p>Если вы узнаёте себя в нескольких пунктах сразу, стоит смотреть на состояние комплексно: питание, режим, стресс, восстановление и показатели анализов.</p>
+        </div>
+
+        <div class="signals-grid">
+          <article class="signal-card">
+            <span class="tag">01</span>
+            <h3>Вес держится или растет, даже если вы стараетесь</h3>
+            <p>Разбираем не только калории, но и режим питания, сон, стресс и метаболическую нагрузку.</p>
+          </article>
+          <article class="signal-card">
+            <span class="tag">02</span>
+            <h3>Постоянно тянет на сладкое и перекусы</h3>
+            <p>Смотрим, почему не хватает насыщения и устойчивой энергии, и как стабилизировать питание без насилия над собой.</p>
+          </article>
+          <article class="signal-card">
+            <span class="tag">03</span>
+            <h3>Анализы по сахару или инсулину вызывают тревогу</h3>
+            <p>Помогаю упорядочить картину и понять, с чего реально начать при преддиабете и метаболических рисках.</p>
+          </article>
+          <article class="signal-card">
+            <span class="tag">04</span>
+            <h3>Не хватает энергии, сна и ясности</h3>
+            <p>Усталость, сонливость и туман в голове часто связаны не с одной причиной, а с их связкой.</p>
+          </article>
+          <article class="signal-card">
+            <span class="tag">05</span>
+            <h3>Есть ощущение, что организм стареет быстрее</h3>
+            <p>Anti-age в моем подходе - это питание, ритм жизни, метаболическая устойчивость и долгий ресурс.</p>
+          </article>
+          <article class="signal-card">
+            <span class="tag">06</span>
+            <h3>Нужен не просто список продуктов, а логика действий</h3>
+            <p>Перевожу сложную картину состояния в понятный план: что делать сейчас и на что не тратить силы.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Что вы получите</p>
+          <h2>Вместо хаоса из советов вы получаете понятную систему</h2>
+          <p>Моя задача - помочь вам увидеть полную картину состояния, определить приоритеты и выстроить понятный план действий без перегруза.</p>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <strong>Понятную картину состояния</strong>
+            <p>Что влияет на вес, сахар, аппетит, сон, энергию и общее самочувствие именно у вас.</p>
+          </article>
+          <article class="result-card">
+            <strong>Приоритеты без перегруза</strong>
+            <p>Не десятки правил сразу, а последовательность действий, которую можно встроить в реальную жизнь.</p>
+          </article>
+          <article class="result-card">
+            <strong>Рацион без крайностей</strong>
+            <p>Без жестких диет, постоянных запретов и чувства вины из-за еды.</p>
+          </article>
+          <article class="result-card">
+            <strong>Опору на данные</strong>
+            <p>Смотрим на анализы, ритм дня, симптомы, привычки и динамику, а не только на цифру на весах.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="directions" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">С какими запросами работаю</p>
+          <h2>Основные направления работы</h2>
+          <p>Работаю с запросами, где питание, образ жизни и восстановление напрямую влияют на самочувствие, показатели анализов и качество жизни.</p>
+        </div>
+
+        <div class="directions-grid">
+          <article class="direction-card">
+            <span class="tag warm-tag">Метаболизм</span>
+            <h3>Инсулинорезистентность и преддиабет</h3>
+            <p>Подходит тем, кто видит тревожные маркеры по сахару, замечает тягу к сладкому и хочет снизить риски заранее.</p>
+          </article>
+          <article class="direction-card">
+            <span class="tag warm-tag">Поддержка</span>
+            <h3>Диабет 2 типа и образ жизни</h3>
+            <p>Помогаю выстроить питание, ритм дня и бытовые привычки так, чтобы поддерживать более устойчивое состояние вместе с врачом.</p>
+          </article>
+          <article class="direction-card">
+            <span class="tag warm-tag">Коррекция веса</span>
+            <h3>Если хочется снижать вес без срывов</h3>
+            <p>Работаем не только с тарелкой, но и с насыщением, режимом, стрессом, восстановлением и причинами набора веса.</p>
+          </article>
+          <article class="direction-card">
+            <span class="tag warm-tag">Active age</span>
+            <h3>Энергия, сон, восстановление и anti-age</h3>
+            <p>Для тех, кто хочет не просто похудеть, а сохранить ясность головы, устойчивость и качество жизни в долгую.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Как проходит работа</p>
+          <h2>Как проходит работа</h2>
+          <p>Формат работы можно адаптировать под запрос. Ниже - базовая логика взаимодействия, которую затем можно уточнить по длительности, стоимости и формату сопровождения.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">Шаг 1</span>
+            <h3>Запрос и первичная ориентация</h3>
+            <p>Определяем, что беспокоит сильнее всего: сахар, вес, аппетит, сон, усталость или возрастные изменения.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">Шаг 2</span>
+            <h3>Смотрим на картину целиком</h3>
+            <p>Рацион, режим, симптомы, образ жизни, стресс и уже имеющиеся анализы собираются в одну систему.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">Шаг 3</span>
+            <h3>Собираем приоритетный план</h3>
+            <p>Фиксируем, с чего начать в первую очередь, чтобы не перегружать человека десятком новых правил сразу.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">Шаг 4</span>
+            <h3>Корректируем по динамике</h3>
+            <p>Подход не высечен в камне: по мере изменения самочувствия и режима шаги уточняются и упрощаются.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="section section-soft">
+      <div class="container">
+        <div class="proof-grid">
+          <div>
+            <div class="section-head">
+              <p class="eyebrow">Почему мне доверяют</p>
+              <h2>Почему мне доверяют</h2>
+              <p>Сочетаю медицинскую базу, опыт в фармации и современный нутрициологический подход к питанию и образу жизни.</p>
+            </div>
+
+            <article class="proof-card">
+              <strong>29 лет в фармации</strong>
+              <p>Этот опыт дал не только профессиональную дисциплину, но и трезвый взгляд: симптом не всегда равен причине.</p>
+            </article>
+            <article class="proof-card">
+              <strong>Высшее медицинское образование и дополнительное обучение</strong>
+              <p>Медицинская база сочетается с профильной нутрициологией, темами диабета, age management и активного долголетия.</p>
+            </article>
+            <article class="proof-card">
+              <strong>Специалист с живым экспертным полем</strong>
+              <ul>
+                <li>Пишу о симптомах инсулинорезистентности, гликации, возрасте, сне и питании.</li>
+                <li>Разбираю темы, которые реально волнуют людей, а не только эстетическую сторону веса.</li>
+                <li>Объясняю сложные состояния человеческим языком, без давления и запугивания.</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="about-card">
+            <img src="photos/2.png" alt="Екатерина Батищева на природе">
+            <div class="about-copy">Я нутрициолог с высшим медицинским образованием и 29-летним опытом в фармации. В работе опираюсь на анализы, образ жизни, питание и реальные бытовые привычки, а не только на список разрешенных и запрещенных продуктов.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Telegram-канал</p>
+          <h2>О чем пишу в Telegram</h2>
+          <p>В канале делюсь материалами о метаболизме, сахаре, питании, сне, восстановлении и активном долголетии.</p>
+        </div>
+
+        <div class="content-grid">
+          <article class="content-card">
+            <a class="content-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><span class="tag warm-tag">Telegram</span></a>
+            <a class="content-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><h3>Инсулинорезистентность и сигналы, которые легко пропустить</h3></a>
+            <p>Тяга к сладкому, нестабильный аппетит, отечность, набор веса и связанные гормональные сигналы.</p>
+            <a class="content-link image-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><img src="photos/telegram-channel-photo_8@20-02-2026_21-21-20.jpg" alt="Чек-лист питания и anti-age рекомендаций"></a>
+            <a class="content-link caption-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><span class="caption">Подача без медицинского пафоса, но с конкретикой.</span></a>
+          </article>
+          <article class="content-card">
+            <a class="content-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><span class="tag warm-tag">Telegram</span></a>
+            <a class="content-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><h3>Сон, стресс и нейромедиаторы</h3></a>
+            <p>В канале есть темы про дофамин, серотонин, окситоцин и мелатонин - это показывает системный взгляд на ресурс человека.</p>
+            <a class="content-link image-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><img src="photos/telegram-channel-photo_7@04-02-2026_18-50-11.jpg" alt="Инфографика про дофамин, серотонин, окситоцин и мелатонин"></a>
+            <a class="content-link caption-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><span class="caption">Полезно для тех, кто приходит не только с весом, но и с истощением.</span></a>
+          </article>
+          <article class="content-card">
+            <a class="content-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><span class="tag warm-tag">Telegram</span></a>
+            <a class="content-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><h3>Активное долголетие и anti-age</h3></a>
+            <p>Темы гликации, преждевременного старения и питания для ресурса расширяют аудиторию за пределы запроса "сбросить вес".</p>
+            <a class="content-link image-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><img src="photos/telegram-channel-photo_3@23-06-2024_19-41-39.jpg" alt="Екатерина Батищева на природе"></a>
+            <a class="content-link caption-link" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer"><span class="caption">Темы о возрасте, ресурсе и профилактике.</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="documents" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Документы и обучение</p>
+          <h2>Образование и дополнительное обучение</h2>
+          <p>Здесь можно показать документы, подтверждающие образование и повышение квалификации.</p>
+        </div>
+
+        <div class="docs-grid">
+          <a class="doc-card" href="photos/discussion-photo_6@06-03-2026_19-30-27.jpg" target="_blank" rel="noreferrer">
+            <img src="photos/discussion-photo_6@06-03-2026_19-30-27.jpg" alt="Удостоверение по age management">
+            <strong>Age management</strong>
+            <p>Технологии красоты и активного долголетия.</p>
+          </a>
+          <a class="doc-card" href="photos/discussion-photo_7@06-03-2026_19-30-27.jpg" target="_blank" rel="noreferrer">
+            <img src="photos/discussion-photo_7@06-03-2026_19-30-27.jpg" alt="Удостоверение по сахарному диабету">
+            <strong>Сахарный диабет</strong>
+            <p>Интегративный подход и комплексные решения.</p>
+          </a>
+          <a class="doc-card" href="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" target="_blank" rel="noreferrer">
+            <img src="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" alt="Сертификат по продлению молодости">
+            <strong>Практикум по долголетию</strong>
+            <p>Тема продления молодости и отсрочки возрастных изменений.</p>
+          </a>
+          <a class="doc-card" href="photos/discussion-photo_5@06-03-2026_19-29-27.jpg" target="_blank" rel="noreferrer">
+            <img src="photos/discussion-photo_5@06-03-2026_19-29-27.jpg" alt="Сертификат по функциональному телу">
+            <strong>Функциональное состояние тела</strong>
+            <p>Дополнительное обучение, расширяющее практику работы с образом жизни.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Частые вопросы</h2>
+          <p>Ответы на вопросы, которые чаще всего возникают перед первой консультацией.</p>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-card">
+            <h3>Это только про похудение?</h3>
+            <p>Нет. Коррекция веса - лишь часть работы. Основной акцент здесь на метаболическом здоровье, устойчивой энергии, сне, сахаре и качестве жизни в долгую.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Если у меня уже есть диагноз?</h3>
+            <p>При установленном диагнозе работа идет в связке с лечащим врачом. Нутрициологический подход помогает выстроить питание и образ жизни, но не заменяет лечение.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Будут ли жесткие диеты?</h3>
+            <p>Подход строится на реалистичных изменениях. Цель - создать систему, которую можно выдерживать, а не сорваться через неделю.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Нужны ли анализы заранее?</h3>
+            <p>Если анализы уже есть, их можно использовать как часть общей картины. Если нет, сначала оценивается ситуация и только потом определяется, что действительно важно.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Подойдет ли это тем, кто пришел из anti-age темы?</h3>
+            <p>Да. В Telegram-канале и в самой работе большая часть тем связана не только с весом, но и с возрастными изменениями, ресурсом и профилактикой.</p>
+          </article>
+          <article class="faq-card">
+            <h3>С чего начать, если пока не готов(а) к консультации?</h3>
+            <p>Самый мягкий вход сейчас - Telegram-канал. Он дает понимание тона, глубины и тем, с которыми работает Екатерина.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <p class="eyebrow">Запись на консультацию</p>
+            <h2>Обсудим ваш запрос</h2>
+            <p class="cta-copy">Напишите, если хотите уточнить формат работы, стоимость, ближайшие даты и понять, какой вариант консультации вам подходит. Здесь должен быть реальный способ записи и короткое описание первого шага.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="#">[добавить ссылку для записи]</a>
+              <a class="btn btn-secondary" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer">Telegram-канал</a>
+            </div>
+          </div>
+          <aside class="cta-side">
+            <h3>Что нужно добавить</h3>
+            <ul class="cta-list">
+              <li>[ссылка для записи: Telegram / WhatsApp / форма]</li>
+              <li>[формат работы: онлайн / офлайн / город]</li>
+              <li>[стоимость консультации и/или сопровождения]</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>Екатерина Батищева, нутрициолог.</span>
+      <span>Черновик лендинга. Перед запуском нужно заполнить контакты, формат работы и условия записи.</span>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a class="btn btn-primary" href="#contacts">Записаться</a>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
