@@ -45,7 +45,7 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     .container { width: min(1280px, calc(100vw - 48px)); margin: 0 auto; }
-    .section { padding: 76px 0; }
+    .section { padding: 57px 0; scroll-margin-top: 96px; }
     .section-soft { position: relative; }
     .section-soft::before {
       content: "";
@@ -192,16 +192,7 @@
       border: 1px solid rgba(62, 106, 82, 0.12);
       box-shadow: var(--shadow);
     }
-    .hero-shell::after {
-      content: "";
-      position: absolute;
-      inset: auto -90px -90px auto;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(62, 106, 82, 0.16), rgba(62, 106, 82, 0));
-      pointer-events: none;
-    }
+    .hero-shell::after { content: none; }
     .hero-grid {
       position: relative;
       z-index: 1;
@@ -251,6 +242,7 @@
     }
 
     .portrait-wrap { position: relative; }
+    .portrait-wrap-inline { display: none; }
     .portrait-card {
       width: 100%;
       padding: 18px;
@@ -370,14 +362,16 @@
 
     @media (max-width: 1080px) {
       .hero-grid, .proof-grid, .cta-shell { grid-template-columns: 1fr; }
+      .hero-grid > .portrait-wrap { display: none; }
+      .portrait-wrap-inline { display: block; }
       .results-grid, .steps-grid, .docs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 860px) {
-      body { padding-bottom: 86px; }
-      .section { padding: 64px 0; }
+      .section { padding: 48px 0; scroll-margin-top: 84px; }
       .nav { display: none; }
       .header-row > .btn { display: none; }
       .hero-points, .signals-grid, .stats-row, .directions-grid, .content-grid, .faq-grid { grid-template-columns: 1fr; }
+      .hero-meta { display: none; }
       .header-row { align-items: start; padding: 14px 0; }
       .brand { gap: 12px; }
       .brand-badge {
@@ -388,7 +382,6 @@
       .brand-badge-letter { font-size: 1.35rem; }
       .hero-actions, .cta-actions { flex-direction: column; }
       .hero-actions .btn, .cta-actions .btn { width: 100%; }
-      .mobile-bar { display: block; }
     }
     @media (max-width: 640px) {
       h1 { font-size: clamp(1.55rem, 7vw, 2.05rem); max-width: 100%; }
@@ -433,6 +426,11 @@
             <div class="hero-copy">
               <p class="eyebrow">Нутрициолог с медицинской базой</p>
               <h1>Помогаю вернуть в баланс вес, сахар и энергию</h1>
+              <div class="portrait-wrap portrait-wrap-inline">
+                <div class="portrait-card">
+                  <img src="photos/1.png" alt="Екатерина Батищева, нутрициолог">
+                </div>
+              </div>
               <p class="lead">
                 За 29 лет в фармации я слишком часто видела, как люди годами борются со следствием,
                 а причина остаётся без внимания. Поэтому в работе я помогаю понять,
@@ -457,7 +455,7 @@
                 <a class="pill" href="#documents">Документы и обучение</a>
               </div>
 
-              <p class="hero-note">При установленном диагнозе работа строится в контакте с лечащим врачом и не заменяет медицинское лечение.</p>
+
             </div>
 
             <div class="portrait-wrap">
@@ -470,15 +468,15 @@
 
         <div class="stats-row">
           <article class="stat-card">
-            <strong>29 лет практического опыта</strong>
+            <strong><a href="#proof">29 лет практического опыта</a></strong>
             <p>Опыт в фармации усиливает внимательность к медикаментам, анализам и ограничениям пациента.</p>
           </article>
           <article class="stat-card">
-            <strong>Медицинская база + нутрициология</strong>
+            <strong><a href="#proof">Медицинская база + нутрициология</a></strong>
             <p>Фундаментальное образование сочетается с дополнительным обучением по диабету и age management.</p>
           </article>
           <article class="stat-card">
-            <strong>Спокойный, системный подход</strong>
+            <strong><a href="#approach">Спокойный, системный подход</a></strong>
             <p>Без запугивания и крайностей: пошаговая работа под реальную жизнь, а не под идеальную схему.</p>
           </article>
         </div>
@@ -581,7 +579,7 @@
             <p>Работаем не только с тарелкой, но и с насыщением, режимом, стрессом, восстановлением и причинами набора веса.</p>
           </article>
           <article class="direction-card">
-            <span class="tag warm-tag">Active age</span>
+            <span class="tag warm-tag">Anti age</span>
             <h3>Энергия, сон, восстановление и anti-age</h3>
             <p>Для тех, кто хочет не просто похудеть, а сохранить ясность головы, устойчивость и качество жизни в долгую.</p>
           </article>
@@ -592,7 +590,7 @@
     <section id="approach" class="section">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Как проходит работа</p>
+          <p class="eyebrow">Формат работы</p>
           <h2>Как проходит работа</h2>
           <p>Формат работы можно адаптировать под запрос. Ниже - базовая логика взаимодействия, которую затем можно уточнить по длительности, стоимости и формату сопровождения.</p>
         </div>
@@ -627,7 +625,7 @@
         <div class="proof-grid">
           <div>
             <div class="section-head">
-              <p class="eyebrow">Почему мне доверяют</p>
+              <p class="eyebrow">Доверие</p>
               <h2>Почему мне доверяют</h2>
               <p>Сочетаю медицинскую базу, опыт в фармации и современный нутрициологический подход к питанию и образу жизни.</p>
             </div>
