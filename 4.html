@@ -371,7 +371,7 @@
       .nav { display: none; }
       .header-row > .btn { display: none; }
       .hero-points, .signals-grid, .stats-row, .directions-grid, .content-grid, .faq-grid { grid-template-columns: 1fr; }
-      .hero-meta { display: none; }
+      .stats-row { display: none !important; }
       .header-row { align-items: start; padding: 14px 0; }
       .brand { gap: 12px; }
       .brand-badge {
@@ -381,6 +381,7 @@
       }
       .brand-badge-letter { font-size: 1.35rem; }
       .hero-actions, .cta-actions { flex-direction: column; }
+      .portrait-card { padding: 0; background: transparent; border: 0; box-shadow: none; }
       .hero-actions .btn, .cta-actions .btn { width: 100%; }
     }
     @media (max-width: 640px) {
@@ -395,6 +396,7 @@
   </style>
 </head>
 <body>
+  <div id="top" aria-hidden="true"></div>
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="#top" aria-label="На первый экран">
@@ -418,7 +420,7 @@
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero">
       <div class="container">
         <div class="hero-shell">
@@ -530,12 +532,12 @@
         <div class="section-head">
           <p class="eyebrow">Что вы получите</p>
           <h2>Вместо хаоса из советов вы получаете понятную систему</h2>
-          <p>Моя задача - помочь вам увидеть полную картину состояния, определить приоритеты и выстроить понятный план действий без перегруза.</p>
+          <p>Моя задача - помочь вам увидеть полную картину состояния, определить приоритеты и выстроить план действий.</p>
         </div>
 
         <div class="results-grid">
           <article class="result-card">
-            <strong>Понятную картину состояния</strong>
+            <strong>Картину вашего состояния</strong>
             <p>Что влияет на вес, сахар, аппетит, сон, энергию и общее самочувствие именно у вас.</p>
           </article>
           <article class="result-card">
@@ -694,7 +696,7 @@
         <div class="section-head">
           <p class="eyebrow">Документы и обучение</p>
           <h2>Образование и дополнительное обучение</h2>
-          <p>Здесь можно показать документы, подтверждающие образование и повышение квалификации.</p>
+          <p>Документы об образовании и дополнительном обучении.</p>
         </div>
 
         <div class="docs-grid">
@@ -765,7 +767,7 @@
           <div>
             <p class="eyebrow">Запись на консультацию</p>
             <h2>Обсудим ваш запрос</h2>
-            <p class="cta-copy">Напишите, если хотите уточнить формат работы, стоимость, ближайшие даты и понять, какой вариант консультации вам подходит. Здесь должен быть реальный способ записи и короткое описание первого шага.</p>
+            <p class="cta-copy">Напишите, если хотите уточнить формат работы, стоимость и ближайшие даты. В сообщении можно коротко описать, что вас беспокоит, и я подскажу, с чего лучше начать.</p>
             <div class="cta-actions">
               <a class="btn btn-primary" href="#">[добавить ссылку для записи]</a>
               <a class="btn btn-secondary" href="https://t.me/healthylife_Ekaterina" target="_blank" rel="noreferrer">Telegram-канал</a>
