@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -265,7 +265,7 @@
     }
     .float-bottom span { color: rgba(246, 241, 232, 0.82); }
 
-    .stats-row, .signals-grid, .results-grid, .directions-grid, .steps-grid, .proof-grid, .content-grid, .docs-grid, .faq-grid {
+    .stats-row, .signals-grid, .results-grid, .directions-grid, .steps-grid, .proof-grid, .reviews-grid, .content-grid, .docs-grid, .faq-grid {
       display: grid;
       gap: 18px;
     }
@@ -278,10 +278,11 @@
     .content-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .docs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-    .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .content-card, .doc-card, .faq-card, .note { padding: 24px; border-radius: 24px; }
-    .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .content-card, .doc-card, .faq-card { background: rgba(255, 252, 247, 0.98); }
-    .signal-card, .result-card, .direction-card, .step-card, .proof-card, .content-card, .faq-card, .doc-card { display: grid; gap: 12px; }
+    .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .review-card, .content-card, .doc-card, .faq-card, .note { padding: 24px; border-radius: 24px; }
+    .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .review-card, .content-card, .doc-card, .faq-card { background: rgba(255, 252, 247, 0.98); }
+    .signal-card, .result-card, .direction-card, .step-card, .proof-card, .review-card, .content-card, .faq-card, .doc-card { display: grid; gap: 12px; }
     .note { background: linear-gradient(180deg, rgba(241, 222, 200, 0.54), rgba(255, 252, 247, 0.88)); color: #4f594f; }
     .tag, .step-number {
       display: inline-flex;
@@ -296,7 +297,7 @@
       letter-spacing: 0.08em;
     }
     .warm-tag { background: rgba(187, 133, 80, 0.16); color: #744f2f; }
-    .signal-card p, .result-card p, .direction-card p, .step-card p, .proof-card p, .content-card p, .faq-card p, .doc-card p, .stat-card p { color: var(--muted); font-size: 0.98rem; line-height: 1.65; }
+    .signal-card p, .result-card p, .direction-card p, .step-card p, .proof-card p, .content-card p, .faq-card p, .doc-card p, .stat-card p, .review-bubble p { color: var(--muted); font-size: 0.98rem; line-height: 1.65; }
     .proof-card li, .cta-list li { display: flex; gap: 12px; color: #334137; }
     .proof-card li::before, .cta-list li::before { content: "•"; color: var(--warm); font-weight: 800; }
     .about-card {
@@ -319,6 +320,18 @@
     .content-card img, .doc-card img { width: 100%; border-radius: 18px; border: 1px solid rgba(62, 106, 82, 0.12); }
     .content-card img { aspect-ratio: 1 / 0.92; object-fit: cover; }
     .doc-card img { aspect-ratio: 1 / 1.08; object-fit: cover; background: #fff; }
+    .doc-card img.doc-rotate-left {
+      object-fit: contain;
+      object-position: center;
+      padding: 8px;
+      background: linear-gradient(180deg, #fbfaf7, #f3eee4);
+    }
+    .doc-card img.doc-portrait-contain {
+      object-fit: contain;
+      object-position: left center;
+      padding: 8px;
+      background: linear-gradient(180deg, #fdfcf9, #f3efe7);
+    }
     .caption { color: #365842; font-size: 0.96rem; font-weight: 700; }
     .content-link { width: fit-content; }
     .content-link.image-link { display: block; width: 100%; }
@@ -326,6 +339,110 @@
     .content-link:hover .caption,
     .content-link:hover h3,
     .content-link:hover .tag { color: var(--accent-strong); }
+
+    .reviews-carousel {
+      display: grid;
+      gap: 18px;
+    }
+    .reviews-viewport {
+      max-width: 520px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 30px;
+    }
+    .reviews-track {
+      display: flex;
+      align-items: stretch;
+      transition: transform 320ms ease;
+      will-change: transform;
+    }
+    .review-card {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+      min-width: 100%;
+      height: 500px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+    .review-bubble {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(238, 245, 226, 0.92));
+      border: 1px solid rgba(62, 106, 82, 0.10);
+      box-shadow: 0 18px 36px rgba(39, 51, 42, 0.08);
+    }
+    .review-bubble::before {
+      content: none;
+    }
+    .review-shot {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0 auto;
+      border-radius: 18px;
+      object-fit: contain;
+      box-shadow: 0 16px 30px rgba(39, 51, 42, 0.08);
+    }
+    .reviews-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    .review-nav {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(62, 106, 82, 0.14);
+      border-radius: 50%;
+      background: rgba(255, 252, 247, 0.92);
+      color: var(--accent-strong);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      box-shadow: 0 12px 24px rgba(39, 51, 42, 0.08);
+    }
+    .review-nav:hover {
+      transform: translateY(-1px);
+      background: #fffdf8;
+    }
+    .review-nav:disabled {
+      opacity: 0.45;
+      cursor: default;
+      transform: none;
+      box-shadow: none;
+    }
+    .review-dots {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .review-dot {
+      width: 10px;
+      height: 10px;
+      border: 0;
+      padding: 0;
+      border-radius: 50%;
+      background: rgba(62, 106, 82, 0.22);
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+    .review-dot.is-active {
+      background: var(--accent-strong);
+      transform: scale(1.2);
+    }
 
     .cta-shell {
       display: grid;
@@ -370,7 +487,12 @@
       .section { padding: 48px 0; scroll-margin-top: 84px; }
       .nav { display: none; }
       .header-row > .btn { display: none; }
-      .hero-points, .signals-grid, .stats-row, .directions-grid, .content-grid, .faq-grid { grid-template-columns: 1fr; }
+      .hero-points, .signals-grid, .stats-row, .directions-grid, .reviews-grid, .content-grid, .faq-grid { grid-template-columns: 1fr; }
+      .reviews-controls { gap: 10px; }
+      .reviews-viewport { max-width: 100%; }
+      .review-card { height: 440px; }
+      .review-bubble { padding: 16px; }
+      .review-shot { max-width: 100%; }
       .stats-row { display: none !important; }
       .header-row { align-items: start; padding: 14px 0; }
       .brand { gap: 12px; }
@@ -391,7 +513,9 @@
       .hero-shell { padding: 14px; }
       .brand-name { font-size: 1.2rem; }
       .results-grid, .steps-grid, .docs-grid { grid-template-columns: 1fr; }
-      .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .content-card, .doc-card, .faq-card, .note, .cta-side { padding: 20px; }
+      .stat-card, .signal-card, .result-card, .direction-card, .step-card, .proof-card, .review-card, .content-card, .doc-card, .faq-card, .note, .cta-side { padding: 20px; }
+      .review-card { height: 360px; padding: 0; }
+      .review-bubble { padding: 12px; }
     }
   </style>
 </head>
@@ -414,6 +538,7 @@
         <a href="#directions">Запросы</a>
         <a href="#approach">Как проходит работа</a>
         <a href="#proof">Доверие</a>
+        <a href="#reviews">Отзывы</a>
         <a href="#faq">FAQ</a>
       </nav>
       <a class="btn btn-primary" href="#contacts">Записаться</a>
@@ -426,7 +551,7 @@
         <div class="hero-shell">
           <div class="hero-grid">
             <div class="hero-copy">
-              <p class="eyebrow">Нутрициолог с медицинской базой</p>
+              <a class="eyebrow" href="#top">Нутрициолог с медицинской базой</a>
               <h1>Помогаю вернуть в баланс вес, сахар и энергию</h1>
               <div class="portrait-wrap portrait-wrap-inline">
                 <div class="portrait-card">
@@ -487,7 +612,7 @@
     <section id="signals" class="section section-soft">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Когда стоит обратиться</p>
+          <a class="eyebrow" href="#signals">Когда стоит обратиться</a>
           <h2>Вам сюда, если вы узнаете себя хотя бы в части этих сигналов</h2>
           <p>Если вы узнаёте себя в нескольких пунктах сразу, стоит смотреть на состояние комплексно: питание, режим, стресс, восстановление и показатели анализов.</p>
         </div>
@@ -527,10 +652,10 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="results" class="section">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Что вы получите</p>
+          <a class="eyebrow" href="#results">Что вы получите</a>
           <h2>Вместо хаоса из советов вы получаете понятную систему</h2>
           <p>Моя задача - помочь вам увидеть полную картину состояния, определить приоритеты и выстроить план действий.</p>
         </div>
@@ -559,7 +684,7 @@
     <section id="directions" class="section section-soft">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">С какими запросами работаю</p>
+          <a class="eyebrow" href="#directions">С какими запросами работаю</a>
           <h2>Основные направления работы</h2>
           <p>Работаю с запросами, где питание, образ жизни и восстановление напрямую влияют на самочувствие, показатели анализов и качество жизни.</p>
         </div>
@@ -592,9 +717,9 @@
     <section id="approach" class="section">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Формат работы</p>
+          <a class="eyebrow" href="#approach">Формат работы</a>
           <h2>Как проходит работа</h2>
-          <p>Формат работы можно адаптировать под запрос. Ниже - базовая логика взаимодействия, которую затем можно уточнить по длительности, стоимости и формату сопровождения.</p>
+          <p>Ниже - базовый формат работы. При необходимости его можно адаптировать под ваш запрос, цели и удобный формат сопровождения.</p>
         </div>
 
         <div class="steps-grid">
@@ -627,7 +752,7 @@
         <div class="proof-grid">
           <div>
             <div class="section-head">
-              <p class="eyebrow">Доверие</p>
+              <a class="eyebrow" href="#proof">Доверие</a>
               <h2>Почему мне доверяют</h2>
               <p>Сочетаю медицинскую базу, опыт в фармации и современный нутрициологический подход к питанию и образу жизни.</p>
             </div>
@@ -657,10 +782,10 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section id="telegram" class="section">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Telegram-канал</p>
+          <a class="eyebrow" href="#telegram">Telegram-канал</a>
           <h2>О чем пишу в Telegram</h2>
           <p>В канале делюсь материалами о метаболизме, сахаре, питании, сне, восстановлении и активном долголетии.</p>
         </div>
@@ -694,24 +819,24 @@
     <section id="documents" class="section section-soft">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Документы и обучение</p>
+          <a class="eyebrow" href="#documents">Документы и обучение</a>
           <h2>Образование и дополнительное обучение</h2>
           <p>Документы об образовании и дополнительном обучении.</p>
         </div>
 
         <div class="docs-grid">
-          <a class="doc-card" href="photos/discussion-photo_6@06-03-2026_19-30-27.jpg" target="_blank" rel="noreferrer">
-            <img src="photos/discussion-photo_6@06-03-2026_19-30-27.jpg" alt="Удостоверение по age management">
+          <a class="doc-card" href="photos/discussion-photo_6@06-03-2026_19-30-27-rotated.jpg" target="_blank" rel="noreferrer">
+            <img class="doc-rotate-left" src="photos/discussion-photo_6@06-03-2026_19-30-27-rotated.jpg" alt="Удостоверение по age management">
             <strong>Age management</strong>
             <p>Технологии красоты и активного долголетия.</p>
           </a>
-          <a class="doc-card" href="photos/discussion-photo_7@06-03-2026_19-30-27.jpg" target="_blank" rel="noreferrer">
-            <img src="photos/discussion-photo_7@06-03-2026_19-30-27.jpg" alt="Удостоверение по сахарному диабету">
+          <a class="doc-card" href="photos/discussion-photo_7@06-03-2026_19-30-27-rotated.jpg" target="_blank" rel="noreferrer">
+            <img class="doc-rotate-left" src="photos/discussion-photo_7@06-03-2026_19-30-27-rotated.jpg" alt="Удостоверение по сахарному диабету">
             <strong>Сахарный диабет</strong>
             <p>Интегративный подход и комплексные решения.</p>
           </a>
           <a class="doc-card" href="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" target="_blank" rel="noreferrer">
-            <img src="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" alt="Сертификат по продлению молодости">
+            <img class="doc-portrait-contain" src="photos/discussion-photo_3@06-03-2026_19-28-53.jpg" alt="Сертификат по продлению молодости">
             <strong>Практикум по долголетию</strong>
             <p>Тема продления молодости и отсрочки возрастных изменений.</p>
           </a>
@@ -724,10 +849,46 @@
       </div>
     </section>
 
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section-head">
+          <a class="eyebrow" href="#reviews">Отзывы</a>
+          <h2>Отзывы клиентов</h2>
+        </div>
+
+        <div class="reviews-carousel" data-carousel>
+          <div class="reviews-viewport">
+            <div class="reviews-track">
+              <article class="review-card">
+                <div class="review-bubble">
+                  <img class="review-shot" src="photos/otz1.png" alt="Скриншот отзыва клиента 1">
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div class="review-bubble">
+                  <img class="review-shot" src="photos/otz2.png" alt="Скриншот отзыва клиента 2">
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="reviews-controls">
+            <button class="review-nav" type="button" data-review-prev aria-label="Предыдущий отзыв">&#8592;</button>
+            <div class="review-dots" aria-label="Навигация по отзывам">
+              <button class="review-dot is-active" type="button" data-review-dot="0" aria-label="Показать первый отзыв" aria-current="true"></button>
+              <button class="review-dot" type="button" data-review-dot="1" aria-label="Показать второй отзыв"></button>
+            </div>
+            <button class="review-nav" type="button" data-review-next aria-label="Следующий отзыв">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="faq" class="section">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">FAQ</p>
+          <a class="eyebrow" href="#faq">FAQ</a>
           <h2>Частые вопросы</h2>
           <p>Ответы на вопросы, которые чаще всего возникают перед первой консультацией.</p>
         </div>
@@ -765,7 +926,7 @@
       <div class="container">
         <div class="cta-shell">
           <div>
-            <p class="eyebrow">Запись на консультацию</p>
+            <a class="eyebrow" href="#contacts">Запись на консультацию</a>
             <h2>Обсудим ваш запрос</h2>
             <p class="cta-copy">Напишите, если хотите уточнить формат работы, стоимость и ближайшие даты. В сообщении можно коротко описать, что вас беспокоит, и я подскажу, с чего лучше начать.</p>
             <div class="cta-actions">
@@ -796,5 +957,77 @@
   <div class="mobile-bar">
     <a class="btn btn-primary" href="#contacts">Записаться</a>
   </div>
+  <script>
+    (function () {
+      var carousel = document.querySelector('[data-carousel]');
+      if (!carousel) return;
+
+      var track = carousel.querySelector('.reviews-track');
+      var slides = Array.prototype.slice.call(carousel.querySelectorAll('.review-card'));
+      var dots = Array.prototype.slice.call(carousel.querySelectorAll('[data-review-dot]'));
+      var prevButton = carousel.querySelector('[data-review-prev]');
+      var nextButton = carousel.querySelector('[data-review-next]');
+      var index = 0;
+
+      function update() {
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function (dot, dotIndex) {
+          var active = dotIndex === index;
+          dot.classList.toggle('is-active', active);
+          if (active) {
+            dot.setAttribute('aria-current', 'true');
+          } else {
+            dot.removeAttribute('aria-current');
+          }
+        });
+        prevButton.disabled = index === 0;
+        nextButton.disabled = index === slides.length - 1;
+      }
+
+      prevButton.addEventListener('click', function () {
+        index = Math.max(0, index - 1);
+        update();
+      });
+
+      nextButton.addEventListener('click', function () {
+        index = Math.min(slides.length - 1, index + 1);
+        update();
+      });
+
+      dots.forEach(function (dot, dotIndex) {
+        dot.addEventListener('click', function () {
+          index = dotIndex;
+          update();
+        });
+      });
+
+      update();
+    }());
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
